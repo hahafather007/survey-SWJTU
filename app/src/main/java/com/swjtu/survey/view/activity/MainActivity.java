@@ -5,7 +5,7 @@ import com.swjtu.survey.R;
 import com.swjtu.survey.contract.MainContract;
 import com.swjtu.survey.presenter.MainPresenter;
 
-public class MainActivity extends BaseActivity<MainContract.View, MainContract.Presenter> {
+public class MainActivity extends BaseActivity<MainContract.View, MainContract.Presenter> implements MainContract.View{
 
     @Override
     protected int getLayoutId() {
@@ -25,5 +25,15 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
     @Override
     protected MainContract.Presenter initPresenter() {
         return new MainPresenter();
+    }
+
+    @Override
+    public void showError(Throwable e) {
+
+    }
+
+    @Override
+    public void complete() {
+
     }
 }
