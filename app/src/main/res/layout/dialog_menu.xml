@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:background="@drawable/re_solid_r8_white"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:text="中线测量"
+            android:id="@+id/tv_dialog_menu_center"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/main_text_view_size"
+            android:textColor="@color/text_view_default_color"/>
+
+        <View
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_size"
+            android:background="@color/line_default_color"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:text="断面测量"
+            android:gravity="center_vertical"
+            android:id="@+id/tv_dialog_menu_section"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:textSize="@dimen/main_text_view_size"
+            android:textColor="@color/text_view_default_color"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_height="@dimen/line_size"
+            android:background="@color/line_default_color"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:text="地形测量"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:id="@+id/tv_dialog_menu_terrain"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/main_text_view_size"
+            android:textColor="@color/text_view_default_color"/>
+
+        <View
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_size"
+            android:background="@color/line_default_color"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:text="外控刺点"
+            android:paddingLeft="50dp"
+            android:id="@+id/tv_dialog_menu_control"
+            android:paddingRight="50dp"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/main_text_view_size"
+            android:textColor="@color/text_view_default_color"/>
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:src="@drawable/arrow"
+        android:layout_gravity="right"/>
+
+</FrameLayout>

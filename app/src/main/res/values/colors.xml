@@ -3,4 +3,14 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <!--  默认虚线颜色 -->
+    <color name="line_default_color">#EEEEEE</color>
+
+    <!--  textview 默认颜色-->
+    <color name="text_view_default_color">#333333</color>
+    
+    <!--  textview 确定蓝色 -->
+    <color name="text_sure_blue">#0000FF</color>
+    
 </resources>

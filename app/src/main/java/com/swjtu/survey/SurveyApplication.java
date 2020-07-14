@@ -6,6 +6,8 @@ import android.content.Context;
 import androidx.multidex.MultiDex;
 
 public class SurveyApplication extends Application {
+    public static Context mContext;
+
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
@@ -15,5 +17,6 @@ public class SurveyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        mContext = this;
     }
 }

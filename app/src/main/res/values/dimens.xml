@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--默认分割线大小-->
+    <dimen name="line_size">2px</dimen>
+
+
+    <!--  首页 textview 左右边距 -->
+    <dimen name="main_text_view_margin">44dp</dimen>
+    <!--  首页 textview 高度  -->
+    <dimen name="main_text_view_height">50dp</dimen>
+    <!--  默认 textvew 文字大小-->
+    <dimen name="main_text_view_size">16sp</dimen>
+    <!--  标题字号  -->
+    <dimen name="text_title_size">18sp</dimen>
+
+</resources>
