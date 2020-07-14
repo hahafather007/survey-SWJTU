@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".view.activity.MainActivity">
 
+    <!--make a drawer-->
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
