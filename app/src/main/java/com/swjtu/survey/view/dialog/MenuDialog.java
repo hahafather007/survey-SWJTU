@@ -23,10 +23,22 @@ public class MenuDialog extends BaseDialog {
 
     @Override
     protected void initView(View view) {
-        view.findViewById(R.id.tv_dialog_menu_center).setOnClickListener(v -> onItemClickListener.center());
-        view.findViewById(R.id.tv_dialog_menu_control).setOnClickListener(v -> onItemClickListener.control());
-        view.findViewById(R.id.tv_dialog_menu_section).setOnClickListener(v -> onItemClickListener.section());
-        view.findViewById(R.id.tv_dialog_menu_terrain).setOnClickListener(v -> onItemClickListener.terrain());
+        view.findViewById(R.id.tv_dialog_menu_center).setOnClickListener(v -> {
+            MenuDialog.this.dismiss();
+            onItemClickListener.center();
+        });
+        view.findViewById(R.id.tv_dialog_menu_control).setOnClickListener(v -> {
+            MenuDialog.this.dismiss();
+            onItemClickListener.control();
+        });
+        view.findViewById(R.id.tv_dialog_menu_section).setOnClickListener(v -> {
+            MenuDialog.this.dismiss();
+            onItemClickListener.section();
+        });
+        view.findViewById(R.id.tv_dialog_menu_terrain).setOnClickListener(v -> {
+            MenuDialog.this.dismiss();
+            onItemClickListener.terrain();
+        });
     }
 
     @Override

@@ -3,6 +3,9 @@ package com.swjtu.survey.view.activity;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 import com.android.framekit.view.activity.BaseActivity;
 import com.swjtu.survey.R;
 import com.swjtu.survey.contract.MainContract;
@@ -13,6 +16,7 @@ import com.swjtu.survey.view.dialog.MenuDialog;
 
 public class ProjectActivity extends BaseActivity<MainContract.View, MainContract.Presenter> implements MainContract.View, ClickAction {
     private MenuDialog menuDialog;
+    private DrawerLayout drawerLayout;
     private long mExitTime;
 
     @Override
@@ -22,6 +26,7 @@ public class ProjectActivity extends BaseActivity<MainContract.View, MainContrac
 
     @Override
     protected void configView() {
+        drawerLayout = findViewById(R.id.dl_project);
         setOnClickListener(R.id.iv_project_return,R.id.iv_project_menu);
         TextView tv = findViewById(R.id.tv_project_name);
         tv.setText(getIntent().getStringExtra("name"));
@@ -30,22 +35,30 @@ public class ProjectActivity extends BaseActivity<MainContract.View, MainContrac
         menuDialog.setOnItemClickListener(new MenuDialog.OnItemClickListener() {
             @Override
             public void center() {
-
+                if (!drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    drawerLayout.openDrawer(GravityCompat.START);
+                }
             }
 
             @Override
             public void section() {
-
+                if (!drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    drawerLayout.openDrawer(GravityCompat.START);
+                }
             }
 
             @Override
             public void terrain() {
-
+                if (!drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    drawerLayout.openDrawer(GravityCompat.START);
+                }
             }
 
             @Override
             public void control() {
-
+                if (!drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    drawerLayout.openDrawer(GravityCompat.START);
+                }
             }
         });
 
