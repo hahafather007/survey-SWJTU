@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">survey_SWJTU</string>
+
+    <!--Alert-->
+    <string name="alert_confirm">确认</string>
+    <string name="alert_cancel">取消</string>
+    <string name="alert_storage_tip">系统需要获取读写文件的权限</string>
 </resources>

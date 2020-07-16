@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundImageView">
+        <attr name="round_type" format="integer" />
+        <attr name="round_topLeft" format="dimension" />
+        <attr name="round_topRight" format="dimension" />
+        <attr name="round_bottomLeft" format="dimension" />
+        <attr name="round_bottomRight" format="dimension" />
+        <attr name="round_radius" format="dimension" />
+        <attr name="round_padding" format="dimension"/>
+    </declare-styleable>
+</resources>

@@ -5,7 +5,7 @@ import android.view.View;
 import androidx.annotation.IdRes;
 
 
-/**]
+/**
  * 批量点击事件设置
  */
 public interface ClickAction extends View.OnClickListener {

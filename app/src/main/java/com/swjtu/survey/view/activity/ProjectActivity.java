@@ -8,16 +8,18 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.android.framekit.view.activity.BaseActivity;
 import com.swjtu.survey.R;
-import com.swjtu.survey.contract.MainContract;
-import com.swjtu.survey.presenter.MainPresenter;
+import com.swjtu.survey.bean.SurveyProjectBean;
+import com.swjtu.survey.contract.ProjectContract;
+import com.swjtu.survey.presenter.ProjectPresenter;
 import com.swjtu.survey.utils.ClickAction;
-import com.swjtu.survey.utils.ToastUtils;
 import com.swjtu.survey.view.dialog.MenuDialog;
+import com.swjtu.survey.view.dialog.ProjectInitTipDialog;
 
-public class ProjectActivity extends BaseActivity<MainContract.View, MainContract.Presenter> implements MainContract.View, ClickAction {
+public class ProjectActivity extends BaseActivity<ProjectContract.View, ProjectContract.Presenter> implements ProjectContract.View, ClickAction {
     private MenuDialog menuDialog;
     private DrawerLayout drawerLayout;
     private long mExitTime;
+    private SurveyProjectBean surveyProjectBean;
 
     @Override
     protected int getLayoutId() {
@@ -29,7 +31,8 @@ public class ProjectActivity extends BaseActivity<MainContract.View, MainContrac
         drawerLayout = findViewById(R.id.dl_project);
         setOnClickListener(R.id.iv_project_return,R.id.iv_project_menu);
         TextView tv = findViewById(R.id.tv_project_name);
-        tv.setText(getIntent().getStringExtra("name"));
+        surveyProjectBean = (SurveyProjectBean) getIntent().getSerializableExtra("survey_project");
+        tv.setText(surveyProjectBean.getProjectName());
 
         menuDialog = new MenuDialog();
         menuDialog.setOnItemClickListener(new MenuDialog.OnItemClickListener() {
@@ -65,12 +68,38 @@ public class ProjectActivity extends BaseActivity<MainContract.View, MainContrac
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        checkIsInit();
+    }
+
+    /**
+     * 检查是否初始化工程。未初始化则进行初始化
+     */
+    private void checkIsInit() {
+        if (surveyProjectBean == null) {
+            return;
+        }
+        if (!surveyProjectBean.isProjectInit()) {
+            ProjectInitTipDialog initTipDialog = new ProjectInitTipDialog();
+            initTipDialog.setListener(new ProjectInitTipDialog.OnDialogItemClickListener() {
+                @Override
+                public void onConfirmClick() {
+                    //打开初始化界面
+                    initTipDialog.dismiss();
+                }
+            });
+            initTipDialog.show(getSupportFragmentManager(),"InitTipDialog");
+        }
+    }
+
+    @Override
     protected void initData() {
     }
 
     @Override
-    protected MainContract.Presenter initPresenter() {
-        return new MainPresenter();
+    protected ProjectContract.Presenter initPresenter() {
+        return new ProjectPresenter();
     }
 
 
@@ -99,4 +128,5 @@ public class ProjectActivity extends BaseActivity<MainContract.View, MainContrac
     public void complete() {
 
     }
+
 }

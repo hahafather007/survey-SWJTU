@@ -7,6 +7,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="LightActivityThem" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:statusBarColor">@color/white</item>
+    </style>
+
     <!--dialog fragment 样式设置-->
     <style name="DialogFragment" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
