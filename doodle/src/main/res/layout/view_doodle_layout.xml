@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    >
+    <include
+        android:id="@+id/bar"
+        layout="@layout/bar_drawer"
+        />
+
+    <FrameLayout
+        android:id="@+id/doodle_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="48dp" />
+
+    <FrameLayout
+        android:id="@+id/doodle_panel"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="48dp">
+        <LinearLayout
+            android:id="@+id/ll_pen_container"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="top|start"
+            android:elevation="4dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:translationZ="4dp"
+            android:background="#fff"
+            >
+            <ImageView
+                android:id="@+id/iv_pen_hand"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_pen_unselected"
+                android:padding="12dp"
+                />
+            <ImageView
+                android:id="@+id/iv_pen_mosaic"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_mosaico_unselected"
+                android:padding="12dp"
+                />
+            <ImageView
+                android:id="@+id/iv_pen_eraser"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_eraser_unselected"
+                android:padding="12dp"
+                />
+            <ImageView
+                android:id="@+id/iv_pen_text"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_text_unselected"
+                android:padding="12dp"
+                />
+            <ImageView
+                android:id="@+id/iv_pen_bitmap"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_pic_unselected"
+                android:padding="12dp"
+                />
+            <ImageView
+                android:id="@+id/iv_brush_edit"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_edit_unselected"
+                android:padding="12dp"
+                />
+            <ImageView
+                android:id="@+id/iv_undo"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_undo"
+                android:padding="12dp"
+                />
+            <ImageView
+                android:id="@+id/iv_redo"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_redo"
+                android:padding="12dp"
+                />
+            <FrameLayout
+                android:id="@+id/fl_set_color_container"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/doodle_btn_effect_rect_line"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/iv_color_set"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="#f00" />
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_shape_container"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="top|start"
+            android:elevation="4dp"
+            android:translationZ="4dp"
+            android:layout_marginStart="48dp"
+            android:background="#fff"
+            >
+            <ImageView
+                android:id="@+id/iv_hand_write"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_line_selected"
+                android:padding="12dp"
+                />
+            <ImageView
+                android:id="@+id/iv_arrowhead"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_arrowhead_unselected"
+                android:padding="12dp"
+                />
+            <ImageView
+                android:id="@+id/iv_line"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_line_st_unselected"
+                android:padding="12dp"
+                />
+            <ImageView
+                android:id="@+id/iv_ring"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_ring_unselected"
+                android:padding="12dp"
+                />
+            <ImageView
+                android:id="@+id/iv_circle"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_circle_unselected"
+                android:padding="12dp"
+                />
+            <ImageView
+                android:id="@+id/iv_rect"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_rect_unselected"
+                android:padding="12dp"
+                />
+            <ImageView
+                android:id="@+id/iv_fill_rect"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_rect_fill_unselected"
+                android:padding="12dp"
+                />
+
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:id="@+id/size_container"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_horizontal"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="86dp"
+            android:orientation="vertical">
+
+            <SeekBar
+                android:id="@+id/doodle_seekbar_size"
+                android:layout_width="230dp"
+                android:layout_height="33dp"
+                android:layout_gravity="bottom"
+                android:max="100"
+                android:maxHeight="33dp"
+                android:minHeight="33dp"
+                android:progressDrawable="@drawable/doodle_seekbar_bg"
+                android:thumb="@drawable/doodle_thumb_seekbarr"
+                android:thumbOffset="0dp" />
+
+            <TextView
+                android:id="@+id/paint_size_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#88444444"
+                android:gravity="center"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="12dp" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/doodle_selectable_edit_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/item_scale"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_gravity="center_horizontal"
+                android:background="#88444444"
+                android:gravity="center"
+                android:minWidth="40dp"
+                android:text="100%"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/doodle_title_bar_height"
+                android:background="#88000000"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/doodle_selectable_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/doodle_btn_effect_rect_pressed_black"
+                    android:gravity="center"
+
+                    android:text="@string/doodle_edit"
+                    android:textColor="#ffffff"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/doodle_selectable_bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/doodle_btn_effect_rect_pressed_black"
+                    android:gravity="center"
+
+                    android:text="@string/doodle_bottom"
+                    android:textColor="#ffffff"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/doodle_selectable_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/doodle_btn_effect_rect_pressed_black"
+                    android:gravity="center"
+
+                    android:text="@string/doodle_top"
+                    android:textColor="#ffffff"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/doodle_selectable_remove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/doodle_btn_effect_rect_pressed_black"
+                    android:gravity="center"
+
+                    android:text="@string/doodle_remove"
+                    android:textColor="#ffffff"
+                    android:textSize="16dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- mosaic menu-->
+        <LinearLayout
+            android:id="@+id/mosaic_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:clickable="true"
+            android:layout_marginBottom="126dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_mosaic_level1"
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="3dp"
+                android:background="@drawable/doodle_btn_effect_rect_line"
+
+                android:text="x1" />
+
+            <Button
+                android:id="@+id/btn_mosaic_level2"
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="3dp"
+                android:background="@drawable/doodle_btn_effect_rect_line"
+
+                android:text="x2" />
+
+            <Button
+                android:id="@+id/btn_mosaic_level3"
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="3dp"
+                android:background="@drawable/doodle_btn_effect_rect_line"
+
+                android:text="x3" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+</FrameLayout>

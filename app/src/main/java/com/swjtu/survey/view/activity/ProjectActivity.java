@@ -1,5 +1,6 @@
 package com.swjtu.survey.view.activity;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -65,6 +66,22 @@ public class ProjectActivity extends BaseActivity<ProjectContract.View, ProjectC
             }
         });
 
+        findViewById(R.id.rv_center_line).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        findViewById(R.id.rv_prick_point).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(ProjectActivity.this,TiffGIsActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -87,6 +104,9 @@ public class ProjectActivity extends BaseActivity<ProjectContract.View, ProjectC
                 public void onConfirmClick() {
                     //打开初始化界面
                     initTipDialog.dismiss();
+                    Intent intent = new Intent();
+                    intent.setClass(ProjectActivity.this,ProjectInitActivity.class);
+                    startActivity(intent);
                 }
             });
             initTipDialog.show(getSupportFragmentManager(),"InitTipDialog");

@@ -11,6 +11,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
+        <ImageView
+            android:id="@+id/iv_project_return"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/back"
+            android:padding="12dp"
+            />
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.4dp"
+            app:layout_constraintTop_toBottomOf="@id/iv_project_return"
+            android:background="#ccc"
+            />
+
         <FrameLayout
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -21,12 +40,6 @@
             android:translationZ="4dp"
             >
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/back"
-                android:padding="12dp"
-                android:id="@+id/iv_project_return"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -41,11 +54,152 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/menu_bule"
                 android:layout_gravity="right"
-                android:padding="12dp"
+                android:padding="6dp"
+                android:visibility="invisible"
                 android:id="@+id/iv_project_menu"/>
 
         </FrameLayout>
+        
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.5"
+            android:orientation="vertical"
+            />
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.5"
+            android:orientation="horizontal"
+            />
+        
+        <com.swjtu.survey.widget.RoundImageView
+            android:id="@+id/rv_center_line"
+            android:layout_width="120dp"
+            android:layout_height="180dp"
+            app:layout_constraintBottom_toTopOf="@id/guide_horizontal"
+            app:layout_constraintEnd_toStartOf="@id/guide_vertical"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="6dp"
+            android:src="@mipmap/bg_default_project"
+            android:scaleType="centerCrop"
+            app:round_radius="8dp"
+            app:round_type="1"
+            />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="180dp"
+            app:layout_constraintBottom_toTopOf="@id/guide_horizontal"
+            app:layout_constraintEnd_toStartOf="@id/guide_vertical"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/bg_project_item"
+            />
+
+        <TextView
+            app:layout_constraintTop_toTopOf="@id/rv_center_line"
+            app:layout_constraintStart_toStartOf="@id/rv_center_line"
+            app:layout_constraintEnd_toEndOf="@id/rv_center_line"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:text="中线测量"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:layout_constraintTop_toTopOf="@id/rv_center_line"
+            app:layout_constraintBottom_toBottomOf="@id/rv_center_line"
+            app:layout_constraintStart_toStartOf="@id/rv_center_line"
+            app:layout_constraintEnd_toEndOf="@id/rv_center_line"
+            android:background="@mipmap/ic_project_item_edit"
+            />
+
+        <com.swjtu.survey.widget.RoundImageView
+            android:layout_width="120dp"
+            android:layout_height="180dp"
+            app:layout_constraintBottom_toTopOf="@id/guide_horizontal"
+            app:layout_constraintStart_toEndOf="@id/guide_vertical"
+            android:layout_marginStart="6dp"
+            android:layout_marginBottom="6dp"
+            android:src="@mipmap/bg_default_project"
+            android:scaleType="centerCrop"
+            app:round_radius="8dp"
+            app:round_type="1"
+            />
+        <com.swjtu.survey.widget.RoundImageView
+            android:layout_width="120dp"
+            android:layout_height="180dp"
+            app:layout_constraintTop_toBottomOf="@id/guide_horizontal"
+            app:layout_constraintEnd_toStartOf="@id/guide_vertical"
+            android:layout_marginEnd="6dp"
+            android:layout_marginTop="6dp"
+            android:src="@mipmap/bg_default_project"
+            android:scaleType="centerCrop"
+            app:round_radius="8dp"
+            app:round_type="1"
+            />
+        <com.swjtu.survey.widget.RoundImageView
+            android:id="@+id/rv_prick_point"
+            android:layout_width="120dp"
+            android:layout_height="180dp"
+            app:layout_constraintTop_toBottomOf="@id/guide_horizontal"
+            app:layout_constraintStart_toEndOf="@id/guide_vertical"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
+            android:src="@mipmap/bg_default_project"
+            android:scaleType="centerCrop"
+            app:round_radius="8dp"
+            app:round_type="1"
+            />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="180dp"
+            app:layout_constraintTop_toBottomOf="@id/guide_horizontal"
+            app:layout_constraintStart_toEndOf="@id/guide_vertical"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_project_item"
+            />
+
+        <TextView
+            app:layout_constraintTop_toTopOf="@id/rv_prick_point"
+            app:layout_constraintStart_toStartOf="@id/rv_prick_point"
+            app:layout_constraintEnd_toEndOf="@id/rv_prick_point"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:text="正射刺点"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:layout_constraintTop_toTopOf="@id/rv_prick_point"
+            app:layout_constraintBottom_toBottomOf="@id/rv_prick_point"
+            app:layout_constraintStart_toStartOf="@id/rv_prick_point"
+            app:layout_constraintEnd_toEndOf="@id/rv_prick_point"
+            android:background="@mipmap/ic_project_item_edit"
+            />
+
+        <View
+            android:layout_width="264dp"
+            android:layout_height="384dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            android:background="@drawable/bg_project_item_all"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -12,6 +12,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/doodle" />
+            <option value="$PROJECT_DIR$/floatview" />
             <option value="$PROJECT_DIR$/framekit" />
           </set>
         </option>

@@ -34,6 +34,10 @@
         <activity android:name=".view.activity.HistoryProjectActivity"
             android:theme="@style/LightActivityThem"
             />
+        <activity android:name=".view.activity.ProjectInitActivity"
+            android:theme="@style/LightActivityThem"
+            />
+        <activity android:name=".view.activity.TiffGIsActivity" />
     </application>
 
 </manifest>

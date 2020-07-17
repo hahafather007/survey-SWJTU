@@ -104,9 +104,10 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:layout_marginTop="100dp"
-            android:layout_width="70dp"
-            android:layout_height="70dp"/>
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="@mipmap/bg_drawer"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -139,7 +140,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="清楚缓存"
+                android:text="清除缓存"
                 android:layout_marginLeft="50dp"
                 android:textSize="@dimen/main_text_view_size"
                 android:textColor="@color/text_view_default_color"/>

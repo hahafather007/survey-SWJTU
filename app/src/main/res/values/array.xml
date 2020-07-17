@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gauss_type">
+        <item>WGS84</item>
+        <item>北京54</item>
+        <item>西安80</item>
+        <item>国家2000</item>
+    </string-array>
+</resources>

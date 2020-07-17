@@ -12,5 +12,11 @@
     
     <!--  textview 确定蓝色 -->
     <color name="text_sure_blue">#0000FF</color>
-    
+
+    <!--base blue-->
+    <color name="theme_blue">#1296db</color>
+    <color name="bg_pressed">#2256db</color>
+
+    <color name="gray">#666</color>
+    <color name="transparent">#00000000</color>
 </resources>
