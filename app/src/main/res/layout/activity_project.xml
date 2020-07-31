@@ -1,213 +1,630 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/dl_project"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="#fff">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/iv_main_menu"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="48dp"
+            android:padding="20dp"
+            android:src="@drawable/menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <ImageView
             android:id="@+id/iv_project_return"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/back"
             android:padding="12dp"
-            />
+            android:src="@drawable/back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:id="@+id/view_line"
             android:layout_width="match_parent"
             android:layout_height="0.4dp"
-            app:layout_constraintTop_toBottomOf="@id/iv_project_return"
             android:background="#ccc"
-            />
+            app:layout_constraintTop_toBottomOf="@id/iv_project_return" />
 
         <FrameLayout
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:elevation="4dp"
             android:translationZ="4dp"
-            >
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
 
             <TextView
+                android:id="@+id/tv_project_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/text_title_size"
-                android:textColor="@color/text_view_default_color"
                 android:layout_gravity="center"
-                android:id="@+id/tv_project_name"/>
+                android:textColor="@color/text_view_default_color"
+                android:textSize="@dimen/text_title_size" />
 
             <ImageView
+                android:id="@+id/iv_project_menu"
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/menu_bule"
                 android:layout_gravity="right"
                 android:padding="6dp"
-                android:visibility="invisible"
-                android:id="@+id/iv_project_menu"/>
+                android:src="@drawable/menu_bule"
+                android:visibility="invisible" />
 
         </FrameLayout>
-        
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guide_vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintGuide_percent="0.5"
             android:orientation="vertical"
-            />
+            app:layout_constraintGuide_percent="0.5" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guide_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintGuide_percent="0.5"
             android:orientation="horizontal"
-            />
-        
+            app:layout_constraintGuide_percent="0.5" />
+
         <com.swjtu.survey.widget.RoundImageView
             android:id="@+id/rv_center_line"
-            android:layout_width="120dp"
-            android:layout_height="180dp"
-            app:layout_constraintBottom_toTopOf="@id/guide_horizontal"
-            app:layout_constraintEnd_toStartOf="@id/guide_vertical"
+            android:layout_width="180dp"
+            android:layout_height="240dp"
             android:layout_marginEnd="6dp"
             android:layout_marginBottom="6dp"
-            android:src="@mipmap/bg_default_project"
             android:scaleType="centerCrop"
-            app:round_radius="8dp"
-            app:round_type="1"
-            />
-
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="180dp"
+            android:src="@mipmap/bg_default_project"
             app:layout_constraintBottom_toTopOf="@id/guide_horizontal"
             app:layout_constraintEnd_toStartOf="@id/guide_vertical"
+            app:round_radius="8dp"
+            app:round_type="1" />
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="240dp"
             android:layout_marginEnd="6dp"
             android:layout_marginBottom="6dp"
             android:background="@drawable/bg_project_item"
-            />
+            app:layout_constraintBottom_toTopOf="@id/guide_horizontal"
+            app:layout_constraintEnd_toStartOf="@id/guide_vertical" />
 
         <TextView
-            app:layout_constraintTop_toTopOf="@id/rv_center_line"
-            app:layout_constraintStart_toStartOf="@id/rv_center_line"
-            app:layout_constraintEnd_toEndOf="@id/rv_center_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="中线测量"
             android:textColor="#fff"
             android:textSize="16sp"
-            android:text="中线测量"
-            android:layout_marginTop="12dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            app:layout_constraintEnd_toEndOf="@id/rv_center_line"
+            app:layout_constraintStart_toStartOf="@id/rv_center_line"
+            app:layout_constraintTop_toTopOf="@id/rv_center_line" />
 
         <ImageView
+            android:id="@+id/iv_center_line_action"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            app:layout_constraintTop_toTopOf="@id/rv_center_line"
-            app:layout_constraintBottom_toBottomOf="@id/rv_center_line"
-            app:layout_constraintStart_toStartOf="@id/rv_center_line"
-            app:layout_constraintEnd_toEndOf="@id/rv_center_line"
             android:background="@mipmap/ic_project_item_edit"
-            />
+            app:layout_constraintBottom_toBottomOf="@id/rv_center_line"
+            app:layout_constraintEnd_toEndOf="@id/rv_center_line"
+            app:layout_constraintStart_toStartOf="@id/rv_center_line"
+            app:layout_constraintTop_toTopOf="@id/rv_center_line" />
 
         <com.swjtu.survey.widget.RoundImageView
-            android:layout_width="120dp"
-            android:layout_height="180dp"
-            app:layout_constraintBottom_toTopOf="@id/guide_horizontal"
-            app:layout_constraintStart_toEndOf="@id/guide_vertical"
+            android:layout_width="180dp"
+            android:layout_height="240dp"
             android:layout_marginStart="6dp"
             android:layout_marginBottom="6dp"
-            android:src="@mipmap/bg_default_project"
             android:scaleType="centerCrop"
+            android:src="@mipmap/bg_default_project"
+            app:layout_constraintBottom_toTopOf="@id/guide_horizontal"
+            app:layout_constraintStart_toEndOf="@id/guide_vertical"
             app:round_radius="8dp"
-            app:round_type="1"
-            />
+            app:round_type="1" />
+
         <com.swjtu.survey.widget.RoundImageView
-            android:layout_width="120dp"
-            android:layout_height="180dp"
-            app:layout_constraintTop_toBottomOf="@id/guide_horizontal"
-            app:layout_constraintEnd_toStartOf="@id/guide_vertical"
-            android:layout_marginEnd="6dp"
+            android:layout_width="180dp"
+            android:layout_height="240dp"
             android:layout_marginTop="6dp"
-            android:src="@mipmap/bg_default_project"
+            android:layout_marginEnd="6dp"
             android:scaleType="centerCrop"
+            android:src="@mipmap/bg_default_project"
+            app:layout_constraintEnd_toStartOf="@id/guide_vertical"
+            app:layout_constraintTop_toBottomOf="@id/guide_horizontal"
             app:round_radius="8dp"
-            app:round_type="1"
-            />
+            app:round_type="1" />
+
         <com.swjtu.survey.widget.RoundImageView
             android:id="@+id/rv_prick_point"
-            android:layout_width="120dp"
-            android:layout_height="180dp"
-            app:layout_constraintTop_toBottomOf="@id/guide_horizontal"
-            app:layout_constraintStart_toEndOf="@id/guide_vertical"
+            android:layout_width="180dp"
+            android:layout_height="240dp"
             android:layout_marginStart="6dp"
             android:layout_marginTop="6dp"
-            android:src="@mipmap/bg_default_project"
             android:scaleType="centerCrop"
+            android:src="@mipmap/bg_default_project"
+            app:layout_constraintStart_toEndOf="@id/guide_vertical"
+            app:layout_constraintTop_toBottomOf="@id/guide_horizontal"
             app:round_radius="8dp"
-            app:round_type="1"
-            />
+            app:round_type="1" />
 
         <ImageView
-            android:layout_width="120dp"
-            android:layout_height="180dp"
-            app:layout_constraintTop_toBottomOf="@id/guide_horizontal"
-            app:layout_constraintStart_toEndOf="@id/guide_vertical"
+            android:layout_width="180dp"
+            android:layout_height="240dp"
             android:layout_marginStart="6dp"
             android:layout_marginTop="6dp"
             android:background="@drawable/bg_project_item"
-            />
+            app:layout_constraintStart_toEndOf="@id/guide_vertical"
+            app:layout_constraintTop_toBottomOf="@id/guide_horizontal" />
 
         <TextView
-            app:layout_constraintTop_toTopOf="@id/rv_prick_point"
-            app:layout_constraintStart_toStartOf="@id/rv_prick_point"
-            app:layout_constraintEnd_toEndOf="@id/rv_prick_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="正射刺点"
             android:textColor="#fff"
             android:textSize="16sp"
-            android:text="正射刺点"
-            android:layout_marginTop="12dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            app:layout_constraintEnd_toEndOf="@id/rv_prick_point"
+            app:layout_constraintStart_toStartOf="@id/rv_prick_point"
+            app:layout_constraintTop_toTopOf="@id/rv_prick_point" />
 
         <ImageView
             android:layout_width="36dp"
             android:layout_height="36dp"
-            app:layout_constraintTop_toTopOf="@id/rv_prick_point"
-            app:layout_constraintBottom_toBottomOf="@id/rv_prick_point"
-            app:layout_constraintStart_toStartOf="@id/rv_prick_point"
-            app:layout_constraintEnd_toEndOf="@id/rv_prick_point"
             android:background="@mipmap/ic_project_item_edit"
-            />
+            app:layout_constraintBottom_toBottomOf="@id/rv_prick_point"
+            app:layout_constraintEnd_toEndOf="@id/rv_prick_point"
+            app:layout_constraintStart_toStartOf="@id/rv_prick_point"
+            app:layout_constraintTop_toTopOf="@id/rv_prick_point" />
 
         <View
-            android:layout_width="264dp"
-            android:layout_height="384dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-
+            android:layout_width="384dp"
+            android:layout_height="504dp"
             android:background="@drawable/bg_project_item_all"
-            />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <FrameLayout
-        android:background="@color/white"
-        android:layout_gravity="start"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/white">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <!--高斯投影参数：椭球类型、长轴半径、短轴半径-->
+
+                    <!--中央子午线、投影高程面、平均纬度-->
+
+                    <!--工程换算参数文件导入-->
+
+                    <TextView
+                        android:id="@+id/tv_Gauss_attrs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="高斯投影参数设置"
+                        android:textColor="#333"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.4dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="#eee"
+                        app:layout_constraintTop_toBottomOf="@id/tv_Gauss_attrs" />
+
+                    <TextView
+                        android:id="@+id/tv_gauss_type_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16sp"
+                        android:text="椭球类型选择："
+                        android:textColor="#666"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/spinner_gauss"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/spinner_gauss" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spinner_gauss"
+                        android:layout_width="240dp"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/bg_spinner"
+                        android:entries="@array/gauss_type"
+                        android:spinnerMode="dropdown"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_Gauss_attrs" />
+
+                    <View
+                        android:id="@+id/view_line_type_bellow"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.4dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="#eee"
+                        app:layout_constraintTop_toBottomOf="@id/spinner_gauss" />
+
+                    <TextView
+                        android:id="@+id/tv_long_path_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16sp"
+                        android:text="长轴半径："
+                        android:textColor="#666"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/et_long_path"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/et_long_path" />
+
+                    <EditText
+                        android:id="@+id/et_long_path"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_gauss_attrs_input"
+                        android:hint="请输入长轴半径"
+                        android:padding="12dp"
+                        android:textColor="#666"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tv_long_path_tip"
+                        app:layout_constraintTop_toBottomOf="@id/view_line_type_bellow" />
+
+
+                    <TextView
+                        android:id="@+id/tv_short_path_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16sp"
+                        android:text="短轴半径："
+                        android:textColor="#666"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/et_short_path"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/et_short_path" />
+
+                    <EditText
+                        android:id="@+id/et_short_path"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_gauss_attrs_input"
+                        android:hint="请输入短轴半径"
+                        android:padding="12dp"
+                        android:textColor="#666"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tv_short_path_tip"
+                        app:layout_constraintTop_toBottomOf="@id/et_long_path" />
+
+                    <TextView
+                        android:id="@+id/tv_meridian_path_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16sp"
+                        android:text="中央子午线："
+                        android:textColor="#666"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/et_meridian_path"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/et_meridian_path" />
+
+                    <EditText
+                        android:id="@+id/et_meridian_path"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_gauss_attrs_input"
+                        android:hint="请输入子午线"
+                        android:padding="12dp"
+                        android:textColor="#666"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tv_short_path_tip"
+                        app:layout_constraintTop_toBottomOf="@id/et_short_path" />
+
+                    <TextView
+                        android:id="@+id/tv__altitude_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16sp"
+                        android:text="平均高程："
+                        android:textColor="#666"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/et_altitude_path"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/et_altitude_path" />
+
+                    <EditText
+                        android:id="@+id/et_altitude_path"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_gauss_attrs_input"
+                        android:hint="请输入平均高程"
+                        android:padding="12dp"
+                        android:textColor="#666"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tv_short_path_tip"
+                        app:layout_constraintTop_toBottomOf="@id/et_meridian_path" />
+
+                    <TextView
+                        android:id="@+id/tv_latitude_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16sp"
+                        android:text="平均纬度："
+                        android:textColor="#666"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/et_latitude"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/et_latitude" />
+
+                    <EditText
+                        android:id="@+id/et_latitude"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_gauss_attrs_input"
+                        android:hint="请输入平均纬度"
+                        android:padding="12dp"
+                        android:textColor="#666"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tv_short_path_tip"
+                        app:layout_constraintTop_toBottomOf="@id/et_altitude_path" />
+
+                    <View
+                        android:id="@+id/view_latitude_bellow"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="12dp"
+                        android:background="#f6f6f6"
+                        app:layout_constraintTop_toBottomOf="@id/et_latitude" />
+
+                    <TextView
+                        android:id="@+id/tv_init_files"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="配置文件导入设置"
+                        android:textColor="#333"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view_latitude_bellow" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.4dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="#eee"
+                        app:layout_constraintTop_toBottomOf="@id/tv_init_files" />
+
+                    <TextView
+                        android:id="@+id/tv_plane_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="线路平面参数："
+                        android:textColor="#666"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_plane_file"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_plane_file" />
+
+                    <TextView
+                        android:id="@+id/tv_plane_file"
+                        android:layout_width="180dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_gauss_attrs_input"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:lines="1"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:text="D://fsdfas/fsdfaf/sfsdf.txt"
+                        android:textColor="#999"
+                        android:textSize="16sp"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toStartOf="@id/iv_plane_file_add"
+                        app:layout_constraintTop_toBottomOf="@id/tv_init_files" />
+
+                    <ImageView
+                        android:id="@+id/iv_plane_file_add"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@mipmap/ic_file_add"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_plane_file"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_plane_file" />
+
+                    <TextView
+                        android:id="@+id/tv_circle_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="竖曲线参数："
+                        android:textColor="#666"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_circle_file"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_circle_file" />
+
+                    <TextView
+                        android:id="@+id/tv_circle_file"
+                        android:layout_width="180dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_gauss_attrs_input"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:lines="1"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:text="D://fsdfas/fsdfaf/sfsdf.txt"
+                        android:textColor="#999"
+                        android:textSize="16sp"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toStartOf="@id/iv_circle_file_add"
+                        app:layout_constraintTop_toBottomOf="@id/tv_plane_file" />
+
+                    <ImageView
+                        android:id="@+id/iv_circle_file_add"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@mipmap/ic_file_add"
+                        android:elevation="2dp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_circle_file"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_circle_file" />
+
+                    <View
+                        android:id="@+id/view_line_set_bellow"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="12dp"
+                        android:background="#f6f6f6"
+                        app:layout_constraintTop_toBottomOf="@id/tv_circle_file" />
+
+                    <TextView
+                        android:id="@+id/tv_gps_set"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="6dp"
+                        android:text="GPS设置"
+                        android:textColor="#333"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view_line_set_bellow" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.4dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="#eee"
+                        app:layout_constraintTop_toBottomOf="@id/tv_gps_set" />
+
+                    <TextView
+                        android:id="@+id/tv_gps_precision_set"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16sp"
+                        android:text="GPS高精度设置："
+                        android:textColor="#666"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/et_gps_precision_set"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/et_gps_precision_set" />
+
+                    <EditText
+                        android:id="@+id/et_gps_precision_set"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_gauss_attrs_input"
+                        android:hint="请输入精度值(如10厘米)"
+                        android:padding="12dp"
+                        android:textColor="#666"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tv_gps_precision_set"
+                        app:layout_constraintTop_toBottomOf="@id/tv_gps_set" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="12dp"
+                        android:background="#f6f6f6"
+                        app:layout_constraintTop_toBottomOf="@id/et_gps_precision_set" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tv_init_attrs_submit"
+                    android:layout_width="240dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginTop="72dp"
+                    android:layout_marginBottom="36dp"
+                    android:background="@drawable/bg_init_submit"
+                    android:elevation="4dp"
+                    android:gravity="center"
+                    android:text="保存"
+                    android:textColor="#fff"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </ScrollView>
 
     </FrameLayout>
 

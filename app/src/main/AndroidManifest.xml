@@ -38,6 +38,7 @@
             android:theme="@style/LightActivityThem"
             />
         <activity android:name=".view.activity.TiffGIsActivity" />
+        <activity android:name=".view.activity.CADHolderActivity" />
     </application>
 
 </manifest>

@@ -13,6 +13,7 @@ import com.swjtu.survey.bean.SurveyProjectBean;
 import com.swjtu.survey.contract.ProjectContract;
 import com.swjtu.survey.presenter.ProjectPresenter;
 import com.swjtu.survey.utils.ClickAction;
+import com.swjtu.survey.view.dialog.CADOpenDialog;
 import com.swjtu.survey.view.dialog.MenuDialog;
 import com.swjtu.survey.view.dialog.ProjectInitTipDialog;
 
@@ -66,21 +67,9 @@ public class ProjectActivity extends BaseActivity<ProjectContract.View, ProjectC
             }
         });
 
-        findViewById(R.id.rv_center_line).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        findViewById(R.id.rv_prick_point).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(ProjectActivity.this,TiffGIsActivity.class);
-                startActivity(intent);
-            }
-        });
+        findViewById(R.id.iv_main_menu).setOnClickListener(this);
+        findViewById(R.id.iv_center_line_action).setOnClickListener(this);
+        findViewById(R.id.iv_center_line_action).setOnClickListener(this);
 
     }
 
@@ -134,7 +123,25 @@ public class ProjectActivity extends BaseActivity<ProjectContract.View, ProjectC
                     menuDialog.show(getSupportFragmentManager(),"");
                     mExitTime = System.currentTimeMillis();
                 }
-
+                break;
+            case R.id.iv_main_menu:
+                if (!drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    drawerLayout.openDrawer(GravityCompat.START);
+                }
+                break;
+            case R.id.iv_center_line_action:
+                //如果没有cad，则先导入
+                CADOpenDialog cadOpenDialog = new CADOpenDialog();
+                cadOpenDialog.setListener(new CADOpenDialog.OnDialogItemClickListener() {
+                    @Override
+                    public void onConfirmClick() {
+                        Intent intent = new Intent();
+                        intent.putExtra("survey_project", surveyProjectBean);
+                        intent.setClass(ProjectActivity.this,CADHolderActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                cadOpenDialog.show(getSupportFragmentManager(),"cad_tip");
                 break;
         }
     }

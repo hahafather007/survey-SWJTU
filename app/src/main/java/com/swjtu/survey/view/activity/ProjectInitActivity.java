@@ -7,6 +7,9 @@ import com.swjtu.survey.R;
 import com.swjtu.survey.contract.ProjectInitContract;
 import com.swjtu.survey.presenter.ProjectInitPresenter;
 
+/**
+ * 项目全局参数设置，所有的测量都需要的参数，一处修改，处处生效
+ */
 public class ProjectInitActivity extends BaseActivity<ProjectInitContract.View,ProjectInitContract.Presenter> implements ProjectInitContract.View {
     @Override
     protected int getLayoutId() {

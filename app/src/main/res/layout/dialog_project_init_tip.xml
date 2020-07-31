@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="320dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/re_solid_r8_white">
@@ -18,11 +18,12 @@
             android:layout_width="match_parent"
             android:layout_height="44dp"
             android:layout_marginEnd="12dp"
-            android:gravity="start"
+            android:gravity="start|center_vertical"
             android:textSize="16sp"
             android:layout_marginStart="54dp"
             android:text="请初始化工程参数，否则您将不能完成相应工作!"
-            android:lines="2"
+            android:maxLines="2"
+            android:layout_gravity="center_vertical"
             android:textColor="@color/text_view_default_color"
             />
         <ImageView
@@ -45,10 +46,11 @@
 
     <TextView
         android:id="@+id/tv_confirm"
-        android:layout_width="320dp"
+        android:layout_width="match_parent"
         android:layout_height="44dp"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/view_line"
+        app:layout_constraintStart_toStartOf="parent"
         android:text="前往设置"
         android:textSize="16sp"
         android:textColor="@color/text_sure_blue"

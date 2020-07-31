@@ -8,7 +8,9 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.android.framekit.utils.DeviceUtil;
 import com.android.framekit.view.dialog.BaseDialog;
+import com.doodle.util.ScreenUtil;
 import com.swjtu.survey.R;
 
 public class ProjectInitTipDialog extends BaseDialog {
@@ -67,7 +69,7 @@ public class ProjectInitTipDialog extends BaseDialog {
         if (window != null)
             window.setGravity(Gravity.CENTER);
         WindowManager.LayoutParams lp = window.getAttributes();
-        lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.width = DeviceUtil.INSTANCE.dip2px(getContext(),320);
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         lp.dimAmount = 0.5f;
         window.setAttributes(lp);

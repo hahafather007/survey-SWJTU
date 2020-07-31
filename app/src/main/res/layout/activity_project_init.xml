@@ -363,11 +363,71 @@
                 app:layout_constraintTop_toTopOf="@id/tv_circle_file" />
 
             <View
+                android:id="@+id/view_line_set_bellow"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginTop="12dp"
                 android:background="#f6f6f6"
                 app:layout_constraintTop_toBottomOf="@id/tv_circle_file" />
+
+            <TextView
+                android:id="@+id/tv_gps_set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/view_line_set_bellow"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:text="GPS设置"
+                android:textSize="16sp"
+                android:textColor="#333"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.4dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="16dp"
+                android:background="#eee"
+                app:layout_constraintTop_toBottomOf="@id/tv_gps_set" />
+
+            <TextView
+                android:id="@+id/tv_gps_precision_set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16sp"
+                android:text="GPS高精度设置："
+                android:textColor="#666"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/et_gps_precision_set"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/et_gps_precision_set" />
+
+            <EditText
+                android:id="@+id/et_gps_precision_set"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_gauss_attrs_input"
+                android:hint="请输入精度值(如10厘米)"
+                android:padding="12dp"
+                android:textColor="#666"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/tv_gps_precision_set"
+                app:layout_constraintTop_toBottomOf="@id/tv_gps_set" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="12dp"
+                android:background="#f6f6f6"
+                app:layout_constraintTop_toBottomOf="@id/et_gps_precision_set" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

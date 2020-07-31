@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_holder">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:padding="12dp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_gravity="center_horizontal|top"
+            android:gravity="center"
+            android:text="xx测量"
+            android:textColor="#333"
+            android:textSize="18sp" />
+
+
+        <com.swjtu.survey.widget.CocosResizeLayout
+            android:id="@+id/rl_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="44dp">
+
+            <com.swjtu.survey.widget.CocosSurfaceView
+                android:id="@+id/view_cad"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_cad_menu"
+                android:elevation="4dp"
+                android:src="@mipmap/ic_cad_menu"
+                android:padding="12dp"
+                android:layout_gravity="end|bottom"
+                android:layout_marginBottom="36dp"
+                android:layout_marginEnd="36dp"
+                />
+            <ImageView
+                android:id="@+id/iv_add_cl_mileage"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_cad_menu"
+                android:elevation="4dp"
+                android:src="@mipmap/ic_cad_mileage_add"
+                android:padding="13dp"
+                android:layout_gravity="end|bottom"
+                android:layout_marginBottom="92dp"
+                android:layout_marginEnd="36dp"
+                />
+
+            <ImageView
+                android:id="@+id/iv_cl_measure_input"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_cad_menu"
+                android:elevation="4dp"
+                android:src="@mipmap/ic_cad_mileage_measure"
+                android:padding="12dp"
+                android:layout_gravity="end|bottom"
+                android:layout_marginBottom="148dp"
+                android:layout_marginEnd="36dp"
+                />
+
+            <ImageView
+                android:id="@+id/iv_save_menu"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_cad_menu"
+                android:elevation="4dp"
+                android:src="@mipmap/ic_save_menu"
+                android:padding="12dp"
+                android:layout_gravity="end|bottom"
+                android:layout_marginBottom="204dp"
+                android:layout_marginEnd="36dp"
+                />
+        </com.swjtu.survey.widget.CocosResizeLayout>
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:layout_gravity="start"
+        >
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:background="#fff"
+            android:layout_marginBottom="68dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:id="@+id/fl_drawer_content"
+                    >
+                    <TextView
+                        android:id="@+id/center_line_set_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:textColor="#333"
+                        android:textSize="18sp"
+                        android:text="中线测量初始化配置参数设置"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="6dp"
+                        />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.4dp"
+                        android:background="#eee"
+                        app:layout_constraintTop_toBottomOf="@id/center_line_set_tip"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="里程冠号："
+                        android:textSize="16sp"
+                        android:textColor="#666"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintTop_toTopOf="@id/et_start_mileage"
+                        app:layout_constraintBottom_toBottomOf="@id/et_start_mileage"
+                        android:id="@+id/tv_main_mileage_num_tip"
+                        />
+
+
+                    <EditText
+                        android:id="@+id/et_start_mileage"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_gauss_attrs_input"
+                        android:hint="起始里程冠号(如K/DK/YDK)"
+                        android:padding="12dp"
+                        android:textColor="#666"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tv_main_mileage_num_tip"
+                        app:layout_constraintTop_toBottomOf="@id/center_line_set_tip" />
+
+                    <!--里程设置的间距是立即生效的，且不影响之前保存的测量数据-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="里程间距："
+                        android:textSize="16sp"
+                        android:textColor="#666"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintTop_toTopOf="@id/et_line_gap"
+                        app:layout_constraintBottom_toBottomOf="@id/et_line_gap"
+                        android:id="@+id/tv_line_gap_tip"
+                        />
+
+
+                    <EditText
+                        android:id="@+id/et_line_gap"
+                        android:layout_width="150dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_gauss_attrs_input"
+                        android:hint="如(20米/10米/5米)"
+                        android:paddingStart="12dp"
+                        android:lines="1"
+                        android:ellipsize="end"
+                        android:textColor="#666"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toEndOf="@id/tv_line_gap_tip"
+                        app:layout_constraintTop_toBottomOf="@id/et_start_mileage" />
+
+                    <TextView
+                        android:id="@+id/tv_add_action"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        app:layout_constraintTop_toTopOf="@id/et_line_gap"
+                        app:layout_constraintBottom_toBottomOf="@id/et_line_gap"
+                        app:layout_constraintStart_toEndOf="@id/et_line_gap"
+                        android:layout_marginStart="16dp"
+                        android:textColor="#999"
+                        android:textSize="16sp"
+                        android:gravity="center_vertical|start"
+                        android:text="递增"
+                        android:background="@drawable/bg_gauss_attrs_input"
+                        android:paddingStart="36dp"
+                        android:paddingEnd="6dp"
+                        />
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        app:layout_constraintTop_toTopOf="@id/et_line_gap"
+                        app:layout_constraintBottom_toBottomOf="@id/et_line_gap"
+                        app:layout_constraintStart_toEndOf="@id/et_line_gap"
+                        android:background="@mipmap/ic_add_unselected"
+                        android:layout_marginStart="24dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        app:layout_constraintTop_toTopOf="@id/et_line_gap"
+                        app:layout_constraintBottom_toBottomOf="@id/et_line_gap"
+                        app:layout_constraintStart_toEndOf="@id/tv_add_action"
+                        android:layout_marginStart="16dp"
+                        android:textColor="@color/theme_blue"
+                        android:textSize="16sp"
+                        android:gravity="center_vertical|start"
+                        android:text="递减"
+                        android:background="@drawable/bg_gauss_attrs_input"
+                        android:paddingStart="36dp"
+                        android:paddingEnd="6dp"
+                        />
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        app:layout_constraintTop_toTopOf="@id/et_line_gap"
+                        app:layout_constraintBottom_toBottomOf="@id/et_line_gap"
+                        app:layout_constraintStart_toEndOf="@id/tv_add_action"
+                        android:background="@mipmap/ic_reduce_selected"
+                        android:layout_marginStart="24dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="起始里程："
+                        android:textSize="16sp"
+                        android:textColor="#666"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintTop_toTopOf="@id/et_start"
+                        app:layout_constraintBottom_toBottomOf="@id/et_start"
+                        android:id="@+id/tv_start_tip"
+                        />
+
+
+                    <EditText
+                        android:id="@+id/et_start"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_gauss_attrs_input"
+                        android:hint="测量起始里程(如K1+20)"
+                        android:padding="12dp"
+                        android:textColor="#666"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/tv_start_tip"
+                        app:layout_constraintTop_toBottomOf="@id/et_line_gap" />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </ScrollView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.4dp"
+            android:background="#eee"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="68dp"
+            />
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="16dp"
+            android:background="@mipmap/ic_setting"
+            />
+    </FrameLayout>
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
