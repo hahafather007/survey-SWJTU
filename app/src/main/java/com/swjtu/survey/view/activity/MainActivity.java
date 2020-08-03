@@ -92,6 +92,7 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
                 newProjectDialog.show(getSupportFragmentManager(), "");
                 break;
             case R.id.tv_main_input_project:
+                startActivity(new Intent(this,TableActivity.class));
                 break;
             case R.id.tv_main_history_project:
                 MainActivityPermissionsDispatcher.doLocalActionWithPermissionCheck(MainActivity.this,null,ACTION_LOCAL_HISTORY_PROJECT);
